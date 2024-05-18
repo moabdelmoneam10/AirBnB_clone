@@ -2,21 +2,21 @@
   <img src="https://github.com/Youssehf/AirBnB_clone/blob/803cf1bb5ec55ac9783dbf599fde7ee88b3efc7b/assets/youssehfbnb_logo.png" alt="Youssehf logo">
 </p>
 
-<h1 align="center">YoussehfBnB</h1>
+<h1 align="center">MohamedBnB</h1>
 <p align="center">An AirBnB clone.</p>
 
 ---
 
 ## Description :house:
 
-YoussehfBnB is a complete web application, integrating database storage, 
+MohamedBnB is a complete web application, integrating database storage, 
 a back-end API, and front-end interfacing in a clone of AirBnB.
 
 The project currently only implements the back-end console.
 
 ## Classes :cl:
 
-YoussehfBnB utilizes the following classes:
+MohamedBnB utilizes the following classes:
 
 |     | BaseModel | FileStorage | User | State | City | Amenity | Place | Review |
 | --- | --------- | ----------- | -----| ----- | -----| ------- | ----- | ------ |
@@ -30,7 +30,7 @@ YoussehfBnB utilizes the following classes:
 The above classes are handled by the abstracted storage engine defined in the 
 [FileStorage](./models/engine/file_storage.py) class.
 
-Every time the backend is initialized, YoussehfBnB instantiates an instance of 
+Every time the backend is initialized, MohamedBnB instantiates an instance of 
 `FileStorage` called `storage`. The `storage` object is loaded/re-loaded from 
 any class instances stored in the JSON file `file.json`. As class instances are 
 created, updated, or deleted, the `storage` object is used to register 
@@ -39,27 +39,27 @@ corresponding changes in the `file.json`.
 ## Console :computer:
 
 The console is a command line interpreter that permits management of the backend 
-of YoussehfBnB. It can be used to handle and manipulate all classes utilized by 
+of MohamedBnB. It can be used to handle and manipulate all classes utilized by 
 the application (achieved by calls on the `storage` object defined above).
 
 ### Using the Console
 
-The YoussehfBnB console can be run both interactively and non-interactively. 
+The MohamedBnB console can be run both interactively and non-interactively. 
 To run the console in non-interactive mode, pipe any command(s) into an execution 
 of the file `console.py` at the command line.
 
 ```
 $ echo "help" | ./console.py
-(YoussehfBnB) 
+(MohamedBnB) 
 Documented commands (type help <topic>):
 ========================================
 EOF  all  count  create  destroy  help  quit  show  update
 
-(YoussehfBnB) 
+(MohamedBnB) 
 $
 ```
 
-Alternatively, to use the YoussehfBnB console in interactive mode, run the 
+Alternatively, to use the MohamedBnB console in interactive mode, run the 
 file `console.py` by itself:
 
 ```
@@ -70,7 +70,7 @@ While running in interactive mode, the console displays a prompt for input:
 
 ```
 $ ./console.py
-(YoussehfBnB) 
+(MohamedBnB) 
 ```
 
 To quit the console, enter the command `quit`, or input an EOF signal 
@@ -78,19 +78,19 @@ To quit the console, enter the command `quit`, or input an EOF signal
 
 ```
 $ ./console.py
-(YoussehfBnB) quit
+(MohamedBnB) quit
 $
 ```
 
 ```
 $ ./console.py
-(YoussehfBnB) EOF
+(MohamedBnB) EOF
 $
 ```
 
 ### Console Commands
 
-The YoussehfBnB console supports the following commands:
+The MohamedBnB console supports the following commands:
 
 * **create**
   * Usage: `create <class>`
@@ -100,9 +100,9 @@ the instance is saved to the file `file.json`.
 
 ```
 $ ./console.py
-(YoussehfBnB) create BaseModel
+(MohamedBnB) create BaseModel
 119be863-6fe5-437e-a180-b9892e8746b8
-(YoussehfBnB) quit
+(MohamedBnB) quit
 $ cat file.json ; echo ""
 {"BaseModel.119be863-6fe5-437e-a180-b9892e8746b8": {"updated_at": "2019-02-17T2
 1:30:42.215277", "created_at": "2019-02-17T21:30:42.215277", "__class__": "Base
@@ -116,19 +116,19 @@ Prints the string representation of a class instance based on a given id.
 
 ```
 $ ./console.py
-(YoussehfBnB) create User
+(MohamedBnB) create User
 1e32232d-5a63-4d92-8092-ac3240b29f46
-(YoussehfBnB)
-(YoussehfBnB) show User 1e32232d-5a63-4d92-8092-ac3240b29f46
+(MohamedBnB)
+(MohamedBnB) show User 1e32232d-5a63-4d92-8092-ac3240b29f46
 [User] (1e32232d-5a63-4d92-8092-ac3240b29f46) {'id': '1e32232d-5a63-4d92-8092-a
 c3240b29f46', 'created_at': datetime.datetime(2019, 2, 17, 21, 34, 3, 635828), 
 'updated_at': datetime.datetime(2019, 2, 17, 21, 34, 3, 635828)}
-(YoussehfBnB) 
-(YoussehfBnB) User.show(1e32232d-5a63-4d92-8092-ac3240b29f46)
+(MohamedBnB) 
+(MohamedBnB) User.show(1e32232d-5a63-4d92-8092-ac3240b29f46)
 [User] (1e32232d-5a63-4d92-8092-ac3240b29f46) {'id': '1e32232d-5a63-4d92-8092-a
 c3240b29f46', 'created_at': datetime.datetime(2019, 2, 17, 21, 34, 3, 635828), 
 'updated_at': datetime.datetime(2019, 2, 17, 21, 34, 3, 635828)}
-(YoussehfBnB) 
+(MohamedBnB) 
 ```
 * **destroy**
   * Usage: `destroy <class> <id>` or `<class>.destroy(<id>)`
@@ -138,14 +138,14 @@ is updated accordingly.
 
 ```
 $ ./console.py
-(YoussehfBnB) create State
+(MohamedBnB) create State
 d2d789cd-7427-4920-aaae-88cbcf8bffe2
-(YoussehfBnB) create Place
+(MohamedBnB) create Place
 3e-8329-4f47-9947-dca80c03d3ed
-(YoussehfBnB)
-(YoussehfBnB) destroy State d2d789cd-7427-4920-aaae-88cbcf8bffe2
-(YoussehfBnB) Place.destroy(03486a3e-8329-4f47-9947-dca80c03d3ed)
-(YoussehfBnB) quit
+(MohamedBnB)
+(MohamedBnB) destroy State d2d789cd-7427-4920-aaae-88cbcf8bffe2
+(MohamedBnB) Place.destroy(03486a3e-8329-4f47-9947-dca80c03d3ed)
+(MohamedBnB) quit
 $ cat file.json ; echo ""
 {}
 ```
@@ -158,32 +158,32 @@ class name is provided, the command prints all instances of every class.
 
 ```
 $ ./console.py
-(YoussehfBnB) create BaseModel
+(MohamedBnB) create BaseModel
 fce2124c-8537-489b-956e-22da455cbee8
-(YoussehfBnB) create BaseModel
+(MohamedBnB) create BaseModel
 450490fd-344e-47cf-8342-126244c2ba99
-(YoussehfBnB) create User
+(MohamedBnB) create User
 b742dbc3-f4bf-425e-b1d4-165f52c6ff81
-(YoussehfBnB) create User
+(MohamedBnB) create User
 8f2d75c8-fb82-48e1-8ae5-2544c909a9fe
-(YoussehfBnB)
-(YoussehfBnB) all BaseModel
+(MohamedBnB)
+(MohamedBnB) all BaseModel
 ["[BaseModel] (450490fd-344e-47cf-8342-126244c2ba99) {'updated_at': datetime.da
 tetime(2019, 2, 17, 21, 45, 5, 963516), 'created_at': datetime.datetime(2019, 2
 , 17, 21, 45, 5, 963516), 'id': '450490fd-344e-47cf-8342-126244c2ba99'}", "[Bas
 eModel] (fce2124c-8537-489b-956e-22da455cbee8) {'updated_at': datetime.datetime
 (2019, 2, 17, 21, 43, 56, 899348), 'created_at': datetime.datetime(2019, 2, 17,
 21, 43, 56, 899348), 'id': 'fce2124c-8537-489b-956e-22da455cbee8'}"]
-(YoussehfBnB)
-(YoussehfBnB) User.all()
+(MohamedBnB)
+(MohamedBnB) User.all()
 ["[User] (8f2d75c8-fb82-48e1-8ae5-2544c909a9fe) {'updated_at': datetime.datetim
 e(2019, 2, 17, 21, 44, 44, 428413), 'created_at': datetime.datetime(2019, 2, 17
 , 21, 44, 44, 428413), 'id': '8f2d75c8-fb82-48e1-8ae5-2544c909a9fe'}", "[User] 
 (b742dbc3-f4bf-425e-b1d4-165f52c6ff81) {'updated_at': datetime.datetime(2019, 2
 , 17, 21, 44, 15, 974608), 'created_at': datetime.datetime(2019, 2, 17, 21, 44,
 15, 974608), 'id': 'b742dbc3-f4bf-425e-b1d4-165f52c6ff81'}"]
-(YoussehfBnB) 
-(YoussehfBnB) all
+(MohamedBnB) 
+(MohamedBnB) all
 ["[User] (8f2d75c8-fb82-48e1-8ae5-2544c909a9fe) {'updated_at': datetime.datetim
 e(2019, 2, 17, 21, 44, 44, 428413), 'created_at': datetime.datetime(2019, 2, 17
 , 21, 44, 44, 428413), 'id': '8f2d75c8-fb82-48e1-8ae5-2544c909a9fe'}", "[BaseMo
@@ -196,7 +196,7 @@ c3-f4bf-425e-b1d4-165f52c6ff81) {'updated_at': datetime.datetime(2019, 2, 17, 2
 537-489b-956e-22da455cbee8) {'updated_at': datetime.datetime(2019, 2, 17, 21, 4
 3, 56, 899348), 'created_at': datetime.datetime(2019, 2, 17, 21, 43, 56, 899348
 ), 'id': 'fce2124c-8537-489b-956e-22da455cbee8'}"]
-(YoussehfBnB) 
+(MohamedBnB) 
 ```
 
 * **count**
@@ -206,18 +206,18 @@ Retrieves the number of instances of a given class.
 
 ```
 $ ./console.py
-(YoussehfBnB) create Place
+(MohamedBnB) create Place
 12c73223-f3d3-4dec-9629-bd19c8fadd8a
-(YoussehfBnB) create Place
+(MohamedBnB) create Place
 aa229cbb-5b19-4c32-8562-f90a3437d301
-(YoussehfBnB) create City
+(MohamedBnB) create City
 22a51611-17bd-4d8f-ba1b-3bf07d327208
-(YoussehfBnB) 
-(YoussehfBnB) count Place
+(MohamedBnB) 
+(MohamedBnB) count Place
 2
-(YoussehfBnB) city.count()
+(MohamedBnB) city.count()
 1
-(YoussehfBnB) 
+(MohamedBnB) 
 ```
 
 * **update**
@@ -233,37 +233,37 @@ providing a dictionary.
 
 ```
 $ ./console.py
-(YoussehfBnB) create User
+(MohamedBnB) create User
 6f348019-0499-420f-8eec-ef0fdc863c02
-(YoussehfBnB)
-(YoussehfBnB) update User 6f348019-0499-420f-8eec-ef0fdc863c02 first_name "Holberton"
-(YoussehfBnB) show User 6f348019-0499-420f-8eec-ef0fdc863c02
+(MohamedBnB)
+(MohamedBnB) update User 6f348019-0499-420f-8eec-ef0fdc863c02 first_name "Holberton"
+(MohamedBnB) show User 6f348019-0499-420f-8eec-ef0fdc863c02
 [User] (6f348019-0499-420f-8eec-ef0fdc863c02) {'created_at': datetime.datetime(
 2019, 2, 17, 21, 54, 39, 234382), 'first_name': 'Holberton', 'updated_at': date
 time.datetime(2019, 2, 17, 21, 54, 39, 234382), 'id': '6f348019-0499-420f-8eec-
 ef0fdc863c02'}
-(YoussehfBnB)
-(YoussehfBnB) User.update(6f348019-0499-420f-8eec-ef0fdc863c02, address, "98 Mission S
+(MohamedBnB)
+(MohamedBnB) User.update(6f348019-0499-420f-8eec-ef0fdc863c02, address, "98 Mission S
 t")
-(YoussehfBnB) User.show(6f348019-0499-420f-8eec-ef0fdc863c02)
+(MohamedBnB) User.show(6f348019-0499-420f-8eec-ef0fdc863c02)
 [User] (6f348019-0499-420f-8eec-ef0fdc863c02) {'created_at': datetime.datetime(
 2019, 2, 17, 21, 54, 39, 234382), 'address': '98 Mission St', 'first_name': 'Ho
 lberton', 'updated_at': datetime.datetime(2019, 2, 17, 21, 54, 39, 234382), 'id
 ': '6f348019-0499-420f-8eec-ef0fdc863c02'}
-(YoussehfBnB)
-(YoussehfBnB) User.update(6f348019-0499-420f-8eec-ef0fdc863c02, {'email': 'holberton@h
+(MohamedBnB)
+(MohamedBnB) User.update(6f348019-0499-420f-8eec-ef0fdc863c02, {'email': 'holberton@h
 olberton.com', 'last_name': 'School'})
 [User] (6f348019-0499-420f-8eec-ef0fdc863c02) {'email': 'holberton@holberton.co
 m', 'first_name': 'Holberton', 'updated_at': datetime.datetime(2019, 2, 17, 21,
 54, 39, 234382), 'address': '98 Mission St', 'last_name': 'School', 'id': '6f34
 8019-0499-420f-8eec-ef0fdc863c02', 'created_at': datetime.datetime(2019, 2, 17,
 21, 54, 39, 234382)}
-(YoussehfBnB) 
+(MohamedBnB) 
 ```
 
 ## Testing :straight_ruler:
 
-Unittests for the YoussehfBnB project are defined in the [tests](./tests) 
+Unittests for the MohamedBnB project are defined in the [tests](./tests) 
 folder. To run the entire test suite simultaneously, execute the following command:
 
 ```
